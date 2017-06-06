@@ -1,0 +1,49 @@
+// Kalk.cpp: Określa punkt wejścia dla aplikacji konsoli.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	double pierwszaLiczba;
+	double drugaLiczba;
+	char znakOperacji;
+	double wynik;
+
+	cout << "Witaj. Tutaj prosty kalkulator\nPodaj pierwsza liczbe: ";
+	cin >> pierwszaLiczba;
+	cout << "Podaj teraz znak operacji: ";
+	cin >> znakOperacji;
+	cout << "Podaj druga liczbe: ";
+	cin >> drugaLiczba;
+	
+	switch (znakOperacji)
+	{
+	case '+':
+		wynik = pierwszaLiczba + drugaLiczba;
+		break;
+
+	case '-':
+		wynik = pierwszaLiczba - drugaLiczba;
+		break;
+
+	case '*':
+		wynik = pierwszaLiczba * drugaLiczba;
+		break;
+
+	case '/':
+		wynik = pierwszaLiczba * drugaLiczba;
+		break;
+
+
+	default:
+		cout << "Nie znam takiego znaku!\n";
+	}
+	
+	
+    return 0;
+}
