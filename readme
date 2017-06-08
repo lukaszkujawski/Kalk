@@ -1,0 +1,59 @@
+Zaprojektować i zaimplementować w C# aplikację serwera komunikującą się po TCP za pośrednictwem protokołu wykorzystującego format XML. Wymagania:
+
+    pisanie w TDD przestrzegając SOLID, DRY, KISS i inne mądre skrótowce,
+    serwer ma być współbieżny (w oparciu o wątki),
+    adres i port nasłuchu powinien być pobierany z pliku konfiguracyjnego,
+    aplikacja ma być dobrze podzielona na moduły by dodanie obsługi kolejnego typu wiadomości było jak najprostsze do wykonania,
+    wykorzystanie serializacji,
+    kodowanie dokumentów w UTF-8,
+    wszelkie błędy i wyjątkowe sytuacje powinny być zgłaszane klientowi odpowiednim StatusCode (lub analogicznym mechanizmem),
+    użycie bibioteki log4Net do logowania na konsolę i do pliku tekstowego. Funkcje:
+    cytat Paulo Coelho na dziś,
+    echo,
+    zwracanie losowego inta,
+    użycie bibioteki log4Net do logowania na konsolę i do pliku tekstowego. Protokół: żądanie-odpowiedź, przykład
+
+Żądanie
+
+  <ClientRequest>
+  <RequestID>1</RequestID>
+  <RequestType>SEND_PAULO_COELHO_QUOTE</RequestType>
+  </ClientRequest>
+
+Odpowiedź:
+
+<ClientResponse>
+<RequestID>1</RequestID>
+<StatusCode>OK</StatusCode>
+<RequestType>SEND_PAULO_COELHO_QUOTE</RequestType>
+<Parameters>Jest tylko jeden sposób nauki. Poprzez działanie.</Parameters>
+</ClientResponse>
+
+----------------------------------------------------------------------------------------
+
+Zaprojektować i zaimplementować prostego klienta odpytującego serwer kolejno wszystkimi typami żądań. Ma być to prosta aplikacja konsolowa demonstrująca działanie serwera. Wymagania:
+
+    pisanie w TDD przestrzegając SOLID, DRY, KISS i inne mądre skrótowce,
+    adres i port serwera powinien być pobierany z pliku konfiguracyjnego,
+    wykorzystanie serializacji,
+    kodowanie dokumentów w UTF-8,
+    użycie bibioteki log4Net do logowania na konsolę i do pliku tekstowego.
+
+Żądanie:
+
+<?xml version="1.0" encoding="utf-8"?>
+<ClientRequest>
+<RequestID>1</RequestID>
+<RequestType>SEND_PAULO_COELHO_QUOTE</RequestType>
+</ClientRequest>
+
+Odpowiedź:
+
+<?xml version="1.0" encoding="utf-8"?>
+<ClientResponse>
+<RequestID>1</RequestID>
+<StatusCode>OK</StatusCode>
+<RequestType>SEND_PAULO_COELHO_QUOTE</RequestType>
+<Parameters>Jest tylko jeden sposób nauki. Poprzez działanie.</Parameters>
+</ClientResponse>
+
